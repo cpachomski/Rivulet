@@ -1,0 +1,2 @@
+export const FILTER_TERM_SET = 'FILTER_TERM_SET';
+export const FILTER_CURRENT_SET = 'FILTER_CURRENT_SET';
