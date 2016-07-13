@@ -3,29 +3,21 @@ import Socket from '../../socket';
 
 export default React.createClass({
 
-	getInitialState() {
-		return {
-			searchTerm: ''
-		}
-	},
-
 	updateSearchTerm(e) {
-
-		this.setState({
-			searchTerm: e.target.value
-		});
+		this.props.updateFilterTerm(e.target.value);
 	},
 
-	handleSearch(e) {
+	updateFilter(e) {
 		e.preventDefault();
-		Socket.emit('getNewStream', {searchTerm: this.state.searchTerm})
+		this.props.updateCurrentFilter(this.props.filterTerm)
+		
 	},
 
 	render() {
 		return (
 			<div className='searchbar'>
 				<form
-					onSubmit={this.handleSearch}>
+					onSubmit={this.updateFilter}>
 					<input
 						className='searchbar--input'
 						type='text'
