@@ -13,6 +13,10 @@
     "nodemon": "^1.9.2",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2",
+    "redux-logger": "^2.6.1",
+    "redux-thunk": "^2.1.0",
     "socket.io": "^1.4.8",
     "twit": "^2.2.4",
     "webpack": "^1.13.1"
