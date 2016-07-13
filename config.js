@@ -1,8 +1,8 @@
 module.exports = {
 	twitter: {
-		consumerKey: ENV['consumerKey'],
-		consumerSecret: ENV['consumerSecret'],
-		accessToken: ENV['accessToken'],
-		accessTokenSecret: ENV['accessTokenSecret']
+		consumerKey: CONSUMER_KEY,
+		consumerSecret: CONSUMER_SECRET,
+		accessToken: ACCESS_TOKEN,
+		accessTokenSecret: ACCESS_TOKEN_SECRET
 	}
 }
