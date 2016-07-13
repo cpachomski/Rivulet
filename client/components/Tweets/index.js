@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.scss';
-
 import Tweet from '../Tweet'
+import Socket from '../../socket';
 
 export default React.createClass({
 
@@ -25,19 +25,18 @@ export default React.createClass({
 	},
 
 	componentWillMount() {
-		let socket = io.connect('http://localhost:3000');
-		socket.on('payload', (data) => {
+		Socket.on('payload', (data) => {
 			this.addTweet(data.tweet)
 		})
 	},
 
 	render() {
 		return (
-			<div className='tweets-container'>
-				<div className='tweets-list'>
+			<div className='tweets--container'>
+				<div className='tweets--list'>
 					{ 
 						this.state.tweets.map((tweet) => {
-							return <Tweet tweet={tweet}/>
+							return <Tweet key={tweet.id} tweet={tweet}/>
 						})
 					}
 				</div>
