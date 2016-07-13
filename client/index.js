@@ -1,12 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Tweets from './components/Tweets'
 
-const Test = React.createClass({
-	render() {
-		return (
-			<h1> From React </h1>
-		)
-	}
-})
-
-ReactDOM.render(<Test/>, document.getElementById('feed'))
+ReactDOM.render(<Tweets/>, document.getElementById('feed'))
