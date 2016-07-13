@@ -6,7 +6,7 @@ import Searchbar from './presenter';
 
 function mapStateToProps(state) {
 	const { currentFilter, filterTerm } = state.stream;
-
+	
 	return {
 		currentFilter,
 		filterTerm

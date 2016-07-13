@@ -14,6 +14,8 @@ export default React.createClass({
 	},
 
 	render() {
+		const { currentFilter } = this.props;
+
 		return (
 			<div className='searchbar'>
 				<form
@@ -26,6 +28,12 @@ export default React.createClass({
 						className='searchbar--submit'
 						type='submit' />
 				</form>
+				{
+					currentFilter.split('').length > 0 ?
+						<span>Filtered by: { currentFilter }</span>
+					:
+						null
+				}
 			</div>
 		)
 	}

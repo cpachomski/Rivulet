@@ -23353,6 +23353,9 @@
 			this.props.updateCurrentFilter(this.props.filterTerm);
 		},
 		render: function render() {
+			var currentFilter = this.props.currentFilter;
+
+
 			return _react2.default.createElement(
 				'div',
 				{ className: 'searchbar' },
@@ -23367,7 +23370,13 @@
 					_react2.default.createElement('input', {
 						className: 'searchbar--submit',
 						type: 'submit' })
-				)
+				),
+				currentFilter.split('').length > 0 ? _react2.default.createElement(
+					'span',
+					null,
+					'Filtered by: ',
+					currentFilter
+				) : null
 			);
 		}
 	});
