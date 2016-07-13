@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Tweets from './components/Tweets'
+import App from './components/app';
 
-ReactDOM.render(<Tweets/>, document.getElementById('feed'))
+ReactDOM.render(<App />, document.getElementById('feed'));
