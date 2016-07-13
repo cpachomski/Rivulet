@@ -1,5 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app';
+import { Provider } from 'react-redux';
 
-ReactDOM.render(<App />, document.getElementById('feed'));
+import configureStore from './stores/configureStore';
+import * as actions from './actions';
+
+const store = configureStore();
+
+ReactDOM.render(
+	<Provider store={store}>
+		<App />
+	</Provider>
+	, document.getElementById('feed')
+);
