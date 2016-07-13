@@ -1,41 +1,23 @@
 import React from 'react';
-import Socket from '../../socket';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as actions from '../../actions'
+import Searchbar from './presenter';
 
-export default React.createClass({
+function mapStateToProps(state) {
+	const { currentFilter, filterTerm } = state.stream;
 
-	getInitialState() {
-		return {
-			searchTerm: ''
-		}
-	},
-
-	updateSearchTerm(e) {
-		console.log(e.target.value);
-
-		this.setState({
-			searchTerm: e.target.value
-		});
-	},
-
-	handleSearch(e) {
-		e.preventDefault();
-		Socket.emit('getNewStream', {searchTerm: this.state.searchTerm})
-	},
-
-	render() {
-		return (
-			<div className='searchbar'>
-				<form
-					onSubmit={this.handleSearch}>
-					<input
-						className='searchbar--input'
-						type='text'
-						onKeyUp={this.updateSearchTerm} />
-					<input 
-						className='searchbar--submit'
-						type='submit' />
-				</form>
-			</div>
-		)
+	return {
+		currentFilter,
+		filterTerm
 	}
-})
+}
+
+function mapDispatchToProps(dispatch) {
+	return {
+		updateFilterTerm: bindActionCreators(actions.updateFilterTerm, dispatch),
+		updateCurrentFilter: bindActionCreators(actions.updateCurrentFilter, dispatch)
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Searchbar)
