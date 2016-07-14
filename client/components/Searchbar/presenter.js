@@ -28,7 +28,7 @@ export default React.createClass({
 						onKeyUp={this.updateSearchTerm} />
 					{
 						currentFilter.split('').length > 0 ?
-							<span>Current stream: { currentFilter }</span>
+							<span>Current stream: <strong>{ currentFilter }</strong></span>
 						:
 							null
 					}

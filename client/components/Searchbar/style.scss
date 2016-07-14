@@ -9,7 +9,11 @@ $t-dark-blue: #292f33;
 .searchbar {
 	margin-top: 50px !important;
 	form {
+		animation-name: shiftFadeIn;
+		animation-iteration-count: 1;
+		animation-duration: 1.5s;
 		input {
+			width: calc(100% - 30px);
 			position: relative;
 			border: 1px solid $t-dark-blue;
 			padding: 10px 15px;
@@ -22,7 +26,35 @@ $t-dark-blue: #292f33;
 		}
 	}
 	span {
+		text-transform: uppercase;
 		float: right;
-		padding-top: 15px;
+		padding-top: 16px;
+		font-family: $Q;
+		animation-name: shiftFadeIn;
+		animation-iteration-count: 1;
+		animation-duration: 1.5s;
+		strong {
+			color: $t-blue;
+			font-size: 18px;
+			font-family: $Y;
+			letter-spacing: 2px;
+		}
+	}
+}
+
+
+@keyframes shiftFadeIn {
+	0% {
+		opacity: 0;
+		transform: translate(-30px, -30px);
+	}
+
+	65% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+		transform: translate(0px, 0px);
 	}
 }

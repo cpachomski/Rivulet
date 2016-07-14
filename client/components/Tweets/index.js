@@ -31,11 +31,12 @@ export default React.createClass({
 	},
 
 	render() {
+		const reverse = this.state.tweets.reverse();
 		return (
 			<div className='tweets--container centered'>
 				<div className='tweets--list'>
 					{ 
-						this.state.tweets.map((tweet) => {
+						reverse.map((tweet) => {
 							return <Tweet key={tweet.id} tweet={tweet}/>
 						})
 					}

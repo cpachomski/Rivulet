@@ -1,1 +1,38 @@
-style.scss
+$Y: 'Yanone Kaffeesatz', sans-serif;
+$T: 'Tillana', cursive;
+$Q: 'Quicksand', sans-serif;
+$C: 'Cairo', sans-serif;
+$t-blue: #55aace;
+$t-dark-blue: #292f33;
+$t-gray: #ccd6dd;
+
+
+
+.tweet {
+	margin:  15px 0px 25px;
+
+	p {
+		position: relative;
+		font-family: $Q;
+		padding-left: 25px;
+		margin-bottom: 0px; 
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 5px;
+			background-color: $t-gray;
+			height: 100%;
+		}
+	}
+
+	h4.author {
+		text-align: right;
+		margin-top: 5px;
+		color: $t-blue;
+		font-family: $Y;
+		font-size: 16px;
+	}
+}
+
