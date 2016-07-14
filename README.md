@@ -1,4 +1,5 @@
-# TwitterStream
+# Rivulet
+###Live streaming Twitter client
 
 ### Installation
 	$ npm install
