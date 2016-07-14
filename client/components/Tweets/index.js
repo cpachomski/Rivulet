@@ -15,7 +15,7 @@ export default React.createClass({
 		let tweets = this.state.tweets;
 		let newTweets = tweets.concat([tweet]);
 
-		if (newTweets.length > 15) {
+		if (newTweets.length > 100) {
 			newTweets.splice(0, 1)
 		}
 
@@ -32,7 +32,7 @@ export default React.createClass({
 
 	render() {
 		return (
-			<div className='tweets--container'>
+			<div className='tweets--container centered'>
 				<div className='tweets--list'>
 					{ 
 						this.state.tweets.map((tweet) => {

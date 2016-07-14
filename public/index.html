@@ -3,14 +3,17 @@
 <head>
 	<title>Rivulet - Twitter Streamer</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Cairo|Quicksand|Tillana|Yanone+Kaffeesatz" rel="stylesheet">
 </head>
 <body>
-	<header>
-		<h1>Rivulet <i class="fa fa-twitter" aria-hidden="true"></i></h1>
-		<h2>A simple Twitter Streamer with search</h2>
-	</header>
+	<container>
+		<header class='centered'>
+			<h1>Rivulet <i class="fa fa-twitter" aria-hidden="true"></i></h1>
+			<h2>Search and view twitter streams in real time.</h2>
+		</header>
 
-	<div id='feed'></div>
+		<div id='feed'></div>
+	</container>
 	<script type="text/javascript" src='/socket.io/socket.io.js'></script>
 	<script type="text/javascript" src="dist/bundle.js"></script>
 </body>

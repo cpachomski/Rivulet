@@ -1,5 +1,6 @@
 import React from 'react';
 import Socket from '../../socket';
+import './style.scss'
 
 export default React.createClass({
 
@@ -17,23 +18,21 @@ export default React.createClass({
 		const { currentFilter } = this.props;
 
 		return (
-			<div className='searchbar'>
+			<div className='searchbar centered'>
 				<form
 					onSubmit={this.updateFilter}>
 					<input
+						placeholder='Search...'
 						className='searchbar--input'
 						type='text'
 						onKeyUp={this.updateSearchTerm} />
-					<input 
-						className='searchbar--submit'
-						type='submit' />
+					{
+						currentFilter.split('').length > 0 ?
+							<span>Current stream: { currentFilter }</span>
+						:
+							null
+					}
 				</form>
-				{
-					currentFilter.split('').length > 0 ?
-						<span>Filtered by: { currentFilter }</span>
-					:
-						null
-				}
 			</div>
 		)
 	}
